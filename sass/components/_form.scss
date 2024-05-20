@@ -79,15 +79,12 @@
     left: -0.8rem;
 
     &::after {
+      @include absCenter;
       content: "";
       width: 1.2rem;
       height: 1.2rem;
       border-radius: 50%;
       background-color: $color-primary;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       opacity: 0;
       transition: opacity 0.2s;
     }

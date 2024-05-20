@@ -4,6 +4,7 @@
   height: 52rem;
 
   &__side {
+    @include topLeft;
     height: 52rem;
     width: 100%;
     border-radius: $only-3px;
@@ -11,9 +12,6 @@
     backface-visibility: hidden;
     overflow: hidden;
     transition: all 0.8s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
 
     &--front {
       background-color: $color-white;
@@ -152,10 +150,7 @@
     }
   }
   &__cta {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include absCenter;
     width: 90%;
     text-align: center;
   }
