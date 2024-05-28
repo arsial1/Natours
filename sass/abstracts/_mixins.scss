@@ -19,6 +19,10 @@
   left: 0;
 }
 
+/* Writing media queries is not the most fun thing to do,
+but we have to do it, we have to go back and forth, again
+and agian b/w files and b/w different stuff */
+
 // MEDIA QUERY MANAGER
 /*
 0 -600px:       Phone
@@ -32,6 +36,8 @@ $breakpoint argument choices:
 - tab-port
 - tab-land
 - big-desktop
+
+ORDER to make a website responsive: Base + typography > general layout + grid > page layout > components
 */
 
 @mixin respond($breakpoint) {
