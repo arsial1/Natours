@@ -15,6 +15,7 @@
 
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
+
   <body>
     <div class="navigation">
       <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
@@ -90,21 +91,32 @@
           </div>
 
           <div class="col-1-of-2">
+            <!--  Composition with Resolution and Density Switching: -->
             <div class="composition">
+              <!-- Resolution Switching: Different versions of each image are provided with different resolutions (300w and 1000w) using the srcset attribute. The browser selects the most appropriate image based on the device's screen resolution. -->
+
+              <!-- Density Switching:    The sizes attribute specifies the size of the image relative to the vw. For example, when the vw is less than 900px, the image occupies 20% of the viewport width (20vw). Fallback sizes are provided for browsers that do not support srcset and sizes. In this case, a default size of 300px is specified. -->
+
               <img
-                src="img/nat-1-large.jpg"
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width600px) 30vw, 300px"
                 alt="Photo 1"
                 class="composition__photo composition__photo--1"
+                src="img/nat-1-large.jpg"
               />
               <img
-                src="img/nat-2-large.jpg"
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width600px) 30vw, 300px"
                 alt="Photo 2"
                 class="composition__photo composition__photo--2"
+                src="img/nat-2-large.jpg"
               />
               <img
-                src="img/nat-3-large.jpg"
-                alt="Photo 3"
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width600px) 30vw, 300px"
+                alt="Photo 1"
                 class="composition__photo composition__photo--3"
+                src="img/nat-3-large.jpg"
               />
             </div>
           </div>
@@ -399,7 +411,24 @@
     </main>
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
+        <!--  Footer Logo with Art Direction and Density Switching: -->
+        <picture class="footer__logo">
+          <!-- Art Direction: Different versions of the logo are provided for different screen densities using the source element. The browser selects the appropriate image based on both the viewport width and the device's pixel density. -->
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width:37.5em)"
+          />
+
+          <!-- Density Switching: The img element within the picture element provides a fallback option based solely on the device's pixel density. If the conditions specified in the source element are not met, this image is used as a fallback. -->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            src="img/logo-green-2x.png"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
